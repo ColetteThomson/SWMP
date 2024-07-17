@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<!-- load crispy forms -->
+{% load crispy_forms_tags %}
+
+{% block title %}Displaying Model Data{% endblock %}
+
+{% block content %}
+<!-- background for all tech support people pages -->
+<div class="background-tech">
+  <div class="container container-height-home events-mobile">
+    <br />
+    <!-- main heading -->
+    <h1 class="heading_1">Update Tech Support Person</h1>
+
+    <!-- views.py function called and passed 'people_id' (displays pre-populuated form) -->
+    <form action="{% url 'update_techsupport_people' people.id %}" method="POST" class="forms-mobile">
+      <!-- csrf to prevent malicious attacks using user credentials -->
+      {% csrf_token %}
+
+      <!-- render update tech support people form using Crispy filter -->
+      {{ form | crispy }}
+
+      <!-- submit button for update tech support people form -->
+      <button type="submit" class="btn btn-lg button">Update</button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
