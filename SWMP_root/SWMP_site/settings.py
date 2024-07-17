@@ -140,3 +140,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# csrf to show current workspace as trusted
+CSRF_TRUSTED_ORIGINS = \
+    ["https://colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io/"]
