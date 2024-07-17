@@ -1,0 +1,200 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+    <title>WMP</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- navigation menu -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                                
+            <!-- logo in navbar -->
+            <div class="thick-menu">smart<span class="thin-menu">events</span>
+                    <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-menu">WMP
+                    </span></a></div>
+                
+                <!-- navigation menu items -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto navbar-position">
+
+                    <!-- home page menu item -->
+                    <li class="nav-item collapse navbar-collapse navbarText">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+
+                    <!-- project chat page menu item -->
+                    <li class="nav-item collapse navbar-collapse navbarText">
+                        <a class="nav-link active" aria-current="page" href="{% url 'post_list' %}">Chat</a>
+                    </li>
+                    
+                    <!-- display menu items only if user is logged in -->
+                    {% if user.is_authenticated %}
+                    
+                    <!-- bootstrap dropdown menu for projects -->
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Projects
+                        </a>
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_projects' %}">Search Projects</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_projects' %}">All Projects</a>
+                            </li>
+                            <!-- display only if user is 'ProjMgr1' -->
+                            {% if request.user.username == 'ProjMgr1' %}
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_project' %}">Add Project</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+
+                    <!-- bootstrap dropdown menu for ADMINISTRATION people -->
+                    
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Admin People
+                        </a>
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_admin_people' %}">Search Admin People</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_admin_people' %}">All Admin People</a>
+                            </li>
+                            <!-- display only if user is 'PeopleAdmin' -->
+                            {% if request.user.username == 'PeopleAdmin' %}
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_admin_people' %}">Add Admin People</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    
+                    <!-- bootstrap dropdown menu for TECH SUPPORT people -->
+                    <li class="nav-item dropdown collapse navbar-collapse navbarText">
+                        <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Tech People
+                        </a>
+                        <ul class="dropdown-menu" aria-label="navbarDropdown">
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'search_techsupport_people' %}">Search Tech Support People</a>
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'all_techsupport_people' %}">All Tech Support People</a>
+                            </li>
+                            <!-- display only if user is 'PeopleTech' -->
+                            {% if request.user.username == 'PeopleTech' %}
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_tech_support' %}">Add Tech Support People</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+
+                    <!-- logout: displayed only if user is logged in -->
+                    <li class="nav-item collapse navbar-collapse navbarText">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+
+                    <!-- if user not authenticated: displays 'register' and 'login' -->
+                    {% else %}
+                    <li class="nav-item collapse navbar-collapse navbarText">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item collapse navbar-collapse navbarText">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                 
+
+                    <!-- endif: if user is authenticated -->
+                    {% endif %}
+                </ul>
+        </div>
+        <br/>
+    
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <!-- display any user messages -->
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                <!-- ensures html or scripts are safe before being viewed by user -->
+                {{ message | safe }}
+                <!-- dismiss button to remove message -->
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+                </div>
+
+                <!-- end of for message in message statement -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+<!-- flex box to determine body size -->
+<main class="flex-shrink-0">
+        {% block content %}
+        {% endblock content %}
+</main>
+
+    <!-- Footer -->
+    <footer class="footer py-1 bg-light footer-position">
+        <p class="m-0 text-center text-dark text-size">
+            <!-- Copyright -->
+            <span>© 2022 copyright:</span>
+            <!-- logo and brand -->
+            <span class="thick1">smart<span class="thin1">events</span>
+                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand1">WMP
+                </span></a></span>
+        </p>
+        <p class="m-0 text-center text-dark text-size social-networks">follow us: 
+            <a href="https://facebook.com" target="_blank" rel="noopener"
+                aria-label="Visit our Facebook page (opens in a new tab)">
+                <i class="fab fa-facebook-square ms-4"></i></a>
+
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+                aria-label="Visit our Twitter page (opens in a new tab)">
+                <i class="fab fa-twitter-square ms-4"></i></a>
+
+            <a href="https://instagram.com" target="_blank" rel="noopener"
+                aria-label="Visit our Instagram page (opens in a new tab)">
+                <i class="fab fa-instagram-square ms-4"></i></a>
+
+            <a href="https://youtube.com" target="_blank" rel="noopener"
+                aria-label="Visit our YouTube page (opens in a new tab)">
+                <i class="fab fa-youtube-square ms-4"></i></a>
+
+        </p>
+    </footer>
+    
+
+    <!-- javascript timeout function to dismiss flash message alerts after 3 secs-->
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
+
+</body> 
+
+</html>
