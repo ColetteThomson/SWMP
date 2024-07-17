@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-3)f9_!2m5meea3^q20&j-wret8@#!fvs%pi7=riifad!h(f92b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# to ensure summer note editor works on deployment
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['8000-colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io']
 
 
@@ -38,7 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'events.apps.EventsConfig',
+    'django_summernote',
+    'crispy_forms',
+    'chat',
 ]
+
+# Crispy to use bootstrap classes for formatting
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
