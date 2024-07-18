@@ -1,0 +1,908 @@
+/* ------------------------------------------- BASE.HTML */
+body {
+    background-color: whitesmoke;
+    color: #202020;
+}
+
+/* logo for 'WMP' */
+.brand-menu {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #038bfa;
+    padding-right: 10px;
+}
+
+/* logo for 'smartevents' */
+.thick-menu {
+    color: #038bfa;
+    margin-left: 20px;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-right: 0;
+    color: #038bfa;
+}
+
+.thin-menu {
+    font-weight: 300;
+    color: #038bfa;
+}
+
+/* footer */
+.footer-position {
+    position: relative;
+}
+
+.text-size {
+    font-size: 12px;
+}
+
+.thick1 {
+    color: #445261;
+}
+
+.thin1 {
+    font-weight: 300;
+    color: #445261;
+}
+
+.brand1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+    font-weight: 700;
+    color: #445261;
+    padding-right: 10px;
+}
+
+.social-networks i {
+    font-size: 120%;
+    color: #445261;
+}
+
+.center {
+    margin: auto;
+    width: 90%;
+}
+
+/* ---------------------------------------- end base.html */
+
+/* ----------------- R E G I S T E R / L O G I N  screens */
+.btn-signup {
+    background-color: #038bfa;
+    color: whitesmoke;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: whitesmoke;
+    color: #038bfa;
+}
+
+.link {
+    color: #038bfa;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+/* ----------------------------- end: register/login screens */
+
+/* ---------------------------------------------- CONTAINERS */
+/* for 'events' and 'chat' apps */
+.container-height {
+    height: 100%;
+    min-height: 426px;
+} 
+/* -------------------------------------------end Containers */
+
+/* ---------------------------------------------C H A T  app */
+
+/* ---- post_list.html ---- */
+
+/* card positioning for each chat post */
+.col-position {
+    margin: 0;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+/*  title of chat post */
+.title {
+    font-size: 22px;
+}
+
+/*  excerpt for chat post*/
+.chat-post-link {
+    text-decoration: none;
+    color: #445261;
+    font-size: 16px;
+}
+
+/* positioning of chat list */
+.chat-list-size {
+    width: 40%;
+} 
+
+/* pagination */
+.chat-post-link:hover,
+.page-link {
+    color: #202020;
+}
+
+.page-link-size {
+    color: #038bfa;
+    font-size: small;
+    margin-bottom: 10px;
+    padding: 3px 4px 3px 4px;
+}
+
+/* chat post date and like (heart) */
+.chat-like {
+    color: #038bfa;
+}
+
+/* author of chat post */
+.author {
+    color: #038bfa;
+}
+
+/* ---- post_detail.html ---- */
+
+/* heading block at top of page */
+.masthead {
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+/* heading block background*/
+.masthead-background {
+    background-color: #202020;
+    position: relative;
+}
+
+/* heading block image */
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* heading block main title */
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+    position: relative;
+    color: #038bfa;
+    z-index: 3;
+}
+
+/* heading block sub title */
+.post-subtitle {
+    margin-left: 5%;
+    color: whitesmoke;
+    position: relative;
+    z-index: 3;
+}
+
+.card-format {
+    font-family: Arial, sans-serif;
+    color: #3a3a3a;
+    font-size: 14px;
+}
+
+/* ideas & suggestions block */
+.heading-ideas {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.heading-ideas1 {
+    font-size: 18px;
+    padding-left: 0;
+}
+
+.commenter {
+    color: #038bfa;
+}
+
+.card-position {
+    padding-left: 0;
+}
+
+.card-position1 {
+    padding-left: 6px;
+    padding-top: 0;
+}
+
+.card-font {
+    font-size: 14px;
+}
+
+.posting-as {
+    color: #038bfa;
+}
+
+/* hearts (Font Awesome) and number of likes, comments */
+.btn-like {
+    color: #038bfa;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #445261;
+    background: transparent;
+    border: none;
+}
+
+.total-comments {
+    min-width: 80px;
+}
+/* -----------------------------------------------end: Chat app */
+
+/* --------------------------------------------E V E N T S  app */
+/* heading on top of all events pages */
+.heading_1 {
+    text-align: center;
+    font-size: 30px;
+    color: #202020;
+}
+
+/* ---- html files: show_admin_person | show_project | show_techsupport_person */
+/* hyper link */
+.link-color {
+    color: #202020;
+    text-decoration: none;
+    font-size: large;
+}
+
+.link-color:hover,
+.link:active {
+    color: whitesmoke;
+}
+
+/* ---- html files: all_admin_people | all_projects | all_techsupport_people */
+.heading_1 {
+    text-align: center;
+    font-size: 30px;
+    color: #202020;
+}
+
+.table-row {
+    line-height: 50px;
+}
+
+/* update button */
+.button-color-update {
+    color: #445261;
+    background-color: whitesmoke;
+}
+
+/* delete button */
+.button-color-delete {
+    color: whitesmoke;
+    background-color: #445261;
+}
+
+/* pagination block */
+.pagination {
+    justify-content: center;
+}
+
+/* buttons: search | submit */
+.button {
+    margin:0 auto;
+    display:block;
+    color: whitesmoke;
+    background-color:#445261;
+    padding: 4px 5px 4px 5px;
+    font-size: 16px;
+}
+/* card size: search_admin_people | search_projects | search_techsupport_people */
+.card-size {
+    width: 23.75rem;
+}
+
+/* card: show_admin_person | show_project | show_techsupport_person */
+.card-header-text {
+    color: #038bfa;
+    font-size: 20px;
+}
+
+.button-position {
+    margin-right: 80px;
+}
+/* --------------------------------------------- end: Events app */
+
+/* ------------------------------------------------ H O M E  app */
+/* ---- index.html ---- */
+
+/* home page container */
+.container-height-home {
+    height: 100%;
+    min-height: 740px;
+} 
+
+/* logo for 'WMP' */
+.brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #038bfa;
+    padding-right: 10px;
+}
+
+/* logo for 'smartevents' */
+.thick {
+    color: #038bfa;
+}
+
+.thin {
+    font-weight: 300;
+    color: #038bfa;
+}
+
+
+/* headings */
+.main-heading {
+    padding-top: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: #202020;
+}
+
+.sub-heading {
+    margin-top: 20px;
+    padding-top: 0;
+    font-size: 20px;
+    text-align: center;
+    color: #202020;
+}
+
+/* contact for admin */
+.contact {
+    font-size: 15px;
+    color: #038bfa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* body text */
+.text {
+    color: #445261;
+    text-align: center;
+    width: 90%;
+}
+
+/* brand within home page text */
+.brand2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14px;
+    font-weight: 700;
+    color: #038bfa;
+    padding-right: 10px;
+}
+
+.col-margin {
+    margin-bottom: 20px;
+}
+
+.col-text {
+    font-size: 14px;
+}
+
+.row-height {
+    height: 14px;
+}
+
+/* project manager permissions block*/
+/* heading */
+.div-pm {
+    color: #fa03fa;
+    font-size: 16px;
+    text-align: center;
+    width: 60%;
+}
+
+/* text */
+.div-pm-1 {
+    font-size: 16px;
+    color: #445261;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
+    border: none;
+    border-radius: 25px;
+}  
+
+/* background for project manager block */
+.spectrum-background-pm {
+    background:
+        linear-gradient(#fa03fa, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
+}
+
+/* administration people owner permissions block */
+/* heading */
+.div-ad {
+    color: #8c9b0c;
+    font-size: 16px;
+    text-align: center;
+    width: 60%;
+}
+
+/* text */
+.div-ad-1 {
+    font-size: 16px;
+    color: #445261;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
+    border: none;
+    border-radius: 25px;
+}  
+
+/* background for administration people block */
+.spectrum-background-ad {
+    background:
+        linear-gradient(#8c9b0c, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
+}
+
+/* tech support people owner permissions block */
+/* heading */
+.div-tech {
+    color: #c48a0d;
+    font-size: 16px;
+    text-align: center;
+    width: 60%;
+}
+
+/* text */
+.div-tech-1 {
+    font-size: 16px;
+    color: #445261;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
+    border: none;
+    border-radius: 25px;
+}  
+
+/* background for tech support people block */
+.spectrum-background-tech {
+    background:
+        linear-gradient(#c48a0d, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
+}
+
+/* general users permissions block */
+/* heading */
+.div-gen {
+    color: #445261;
+    font-size: 16px;
+    text-align: center;
+    width: 60%;
+}
+
+/* text */
+.div-gen-1 {
+    font-size: 16px;
+    color: #445261;
+    margin-top: 3px;
+    padding-top: 4px;
+    padding-bottom: 0.011px;
+    border: none;
+    border-radius: 25px;
+}  
+
+/* background for general users block */
+.spectrum-background-gen {
+    background:
+        linear-gradient(#3a3a3a, transparent),
+        linear-gradient(to top left, grey, transparent),
+        linear-gradient(to top right, white, transparent);
+    background-blend-mode: screen;
+}
+
+/* applies to all permission blocks */
+.permissions {
+    line-height: 10px;
+}
+.permissions1 {
+    line-height: 10px;
+    padding-top: 7px;
+}
+/* ---------------------------------------------end: HOME app */
+
+/* -------------------------------------B A C K G R O U N D S */
+
+/* background: all admin people pages */
+.background-admin {
+    background: linear-gradient(140deg, #d3e062 60%, #b8c91f 60%);
+}
+
+/* background: all tech support pages */
+.background-tech {
+    background: linear-gradient(140deg, #e4c072 60%, #e7af34 60%);
+}
+
+/* background: all project pages */
+.background-project{
+    background: linear-gradient(140deg, #fccdfc 60%, #f8a4f8 60%);
+}
+
+/* background: general user pages (all 'chat' app pages)*/
+.background-general{
+    background: linear-gradient(140deg, #c7c6c7 60%, #bebebe 60%);
+    margin-top: -17px;
+    margin-bottom: -16px;
+}
+/* ------------------------------------------- end Backgrounds */
+
+/* ----------------------------------- M E D I A   Q U E R I E S */
+
+/* ----------------------------------------------- T A B L E T S */
+
+@media screen and (max-width: 769px) {
+    
+    /* --------------------------------------------- CONTAINERS */
+    /* for 'events' and 'chat' apps */
+        .container-height {
+        height: 100%;
+        min-height: 470px;
+    }  
+    
+    /* headings */
+    h1 {
+        font-size: 1.625rem;
+    }
+    /* ------------------------------------------ end Containers */
+
+    /* -------------------------------------------- C H A T  app */
+
+    /* ---- post_list.html ---- */
+    /*  title of chat post */
+    .title {
+        font-size: 18px;
+    }
+    
+    /*  excerpt for chat post*/
+    .chat-post-link {
+        font-size: 14px;
+    }
+
+    .created-on {
+        font-size: 14px;
+    }
+    /* -------------------------------------------- end Chat app */
+
+    /* ---------------------------------------- E V E N T S  app */
+    /* heading on top of all events pages */
+    .heading_1 {
+        font-size: 25px;
+    }
+
+    /* ------------------------------------------ end Events app */
+
+    /* ---------------------------------------------H O M E  app */
+    /* ---- index.html ---- */
+    
+    /* headings */
+    .main-heading {
+        padding-top: 25px;
+        font-size: 18px;
+    }
+
+    .sub-heading {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    /* contact for admin */
+    .contact {
+        width: 60%;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* body text */
+    .text {
+        font-size: 14px;
+    }
+
+
+    /* project manager permissions block */
+    .div-pm {
+        width: 70%
+    }
+
+    /* administration people permissions block */
+    .div-ad {
+        width: 70%;
+    }
+
+    /* tech support people permissions block */
+    .div-tech {
+        width: 70%;
+    }
+
+    /* general users permissions block */
+    .div-gen {
+        width: 70%;
+    }
+}
+
+/* ----------------------------------------------- M O B I L E S */
+
+@media screen and (max-width: 426px) {
+      
+    /* ---------------------------------------------- C0NTAINERS */
+    /* for 'events' and 'chat' apps */
+    .container-height {
+        height: 100%;
+        min-height: 760px;
+    }  
+
+    /* for 'chat' post_list.html */
+    .post-list-mobile {
+        height: 100%;
+        min-height: 420px;
+    }
+
+    /* for add_project; add_admin-people; add_tech_support */
+    .events-mobile {
+        height: 100%; 
+        min-height: 400px;
+    }
+
+    /* headings */
+    h1 {
+        font-size: 1.125rem;
+      }
+    /* -------------------------------------------end Containers*/
+
+    /* -------------------------------------------- C H A T  app */
+
+    /* ---- post_list.html ---- */
+
+    /* positioning of chat list */
+    .chat-list-size {
+        padding-left: 0;
+        width: 42%;
+    } 
+
+    /* column width for chat list */
+    .chat-list-mobile {
+        padding: 0;
+    }
+
+    /* author of chat post */
+    .author {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    /*  title of chat post */
+    .title {
+        font-size: 14px;
+    }
+
+    /*  excerpt for chat post*/
+    .chat-post-link {
+        text-decoration: none;
+        color: #445261;
+        font-size: 12px;
+    }
+
+    /* date post created on */
+    .created-on {
+        font-size: 10px;
+    }
+
+    /* ---- post_detail.html ---- */
+    /* heading block at top of page */
+    .masthead {
+        height: 15vh;
+        width: 100%;
+    }
+
+    /* heading block image */
+    .masthead-image {
+        display: none;
+    }
+
+    /* heading block main title */
+    .post-title {
+        margin-top: 2%;
+        font-size: 16px;
+    }
+
+    /* heading block sub title */   
+    .post-subtitle {
+        font-size: 12px;
+    }
+
+    /* chat post */
+    .card-body {
+        padding-top: 0;
+    }
+    /* -------------------------------------------------------------- end Chat app */
+
+    /* ---------------------------------------------------------- E V E N T S  app */
+
+    /* heading on top of all events pages */
+    .heading_1 {
+        font-size: 20px;
+    }
+
+    /* ---- html files: show_admin_person | show_project | show_techsupport_person */
+    /* hyperlink and buttons */
+    .link-color,
+    .button-color-update,
+    .button-color-delete {
+        font-size: 14px;
+    }
+
+    /* ---- html files: all_admin_people | all_projects | all_techsupport_people */
+    /* update and delete buttons */
+    .button-size {
+        width: 50px;
+        padding: 2px;
+    }
+
+    /* ---- html files: show_admin_person | show_project | show_techsupport_person */
+    /* card button */
+    .button-position {
+        margin-right: 30px;
+    }
+    
+    /* card text */
+    .mobile-text {
+        font-size: 14px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .card-padding-head {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .form-font {
+        font-size: 14px;
+    }
+
+    .card-header-text {
+        font-size: 16px;
+}
+
+    /* ---- html files: update_admin_people | update_project | update_techsupport_people */
+    /* form */
+    .forms-mobile {
+        font-size: 14px;
+    }
+    /* ----------------------------------------------- end Events app */
+
+    /* ----------------------------------------------- H O M E  app */
+    /* ---- index.html ---- */
+    /* home page container */
+    .container-height-home {
+        min-height: 800px;
+    }
+    
+    /* headings */
+    .main-heading {
+        padding-top: 25px;
+        font-size: 14px;
+    }
+
+    .sub-heading {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* contact for admin */
+    .contact {
+        width: 80%;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* body text */
+    .text {
+        font-size: 12px;
+        width: 95%;
+    }
+
+    /* project manager permissions block*/
+    /* heading */
+    .div-pm {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-pm-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+
+    /* admin people permissions block*/
+    /* heading */
+    .div-ad {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-ad-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+
+    /* tech support people permissions block*/
+    /* heading */
+    .div-tech {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-tech-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+
+    /* general users permissions block*/
+    /* heading */
+    .div-gen {
+        margin-top: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    /* text */
+    .div-gen-1 {
+        font-size: 12px;
+        margin-top: 3px;
+        padding-top: 2px;
+        padding-bottom: 0.011px;
+    }
+    /* ----------------------------------------------------end Home app */
+
+    /* background: general user pages (all 'chat' app pages / home page)*/
+    .background-general{
+        background: linear-gradient(100deg, #c7c6c7 60%, #bebebe 60%);
+        margin-top: -17px;
+        margin-bottom: -16px;
+    }
+
+}

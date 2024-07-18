@@ -11,24 +11,34 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+# import 'constants as messages' to assign category tags for messages
+from django.contrib.messages import constants as messages
+# env.py file doesn't exist in production, is automatically in .gitignore file,
+# so conditional import will prevent app throwing error if unable to locate it
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3)f9_!2m5meea3^q20&j-wret8@#!fvs%pi7=riifad!h(f92b'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 # to ensure summer note editor works on deployment
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io']
+ALLOWED_HOSTS = ['*']
+#['https://colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io']
 
 
 # Application definition
@@ -39,15 +49,36 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'events.apps.EventsConfig',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
+    'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
     'crispy_forms',
     'chat',
+    'events.apps.EventsConfig',
     'home',
 ]
+
+# site id number of '1' to allow handling of multiple sites
+SITE_ID = 1
+
+# to redirect to home page after login or logout
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# assign category tags to relevant Bootstrap class
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # Crispy to use bootstrap classes for formatting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -60,6 +91,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'SWMP_site.urls'
@@ -67,7 +99,9 @@ ROOT_URLCONF = 'SWMP_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,12 +163,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#MEDIA_URL = '/media/'
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -143,4 +177,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # csrf to show current workspace as trusted
 CSRF_TRUSTED_ORIGINS = \
-    ["https://colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io/"]
+    ["https://colettethomson-swmp-njpovwjyf6z.ws-eu115.gitpod.io"]
